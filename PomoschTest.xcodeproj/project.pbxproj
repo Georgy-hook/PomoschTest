@@ -12,6 +12,8 @@
 		666F02272B5D4BE800B57B18 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F02262B5D4BE800B57B18 /* ListViewController.swift */; };
 		666F022C2B5D4BEA00B57B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666F022B2B5D4BEA00B57B18 /* Assets.xcassets */; };
 		666F022F2B5D4BEA00B57B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666F022D2B5D4BEA00B57B18 /* LaunchScreen.storyboard */; };
+		666F023C2B5D508C00B57B18 /* ListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F023B2B5D508C00B57B18 /* ListTableView.swift */; };
+		666F023E2B5D52E700B57B18 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F023D2B5D52E700B57B18 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		666F022B2B5D4BEA00B57B18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		666F022E2B5D4BEA00B57B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		666F02302B5D4BEA00B57B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		666F023B2B5D508C00B57B18 /* ListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableView.swift; sourceTree = "<group>"; };
+		666F023D2B5D52E700B57B18 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				666F02262B5D4BE800B57B18 /* ListViewController.swift */,
+				666F023B2B5D508C00B57B18 /* ListTableView.swift */,
+				666F023D2B5D52E700B57B18 /* ListCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				666F02272B5D4BE800B57B18 /* ListViewController.swift in Sources */,
+				666F023C2B5D508C00B57B18 /* ListTableView.swift in Sources */,
 				666F02232B5D4BE800B57B18 /* AppDelegate.swift in Sources */,
+				666F023E2B5D52E700B57B18 /* ListCell.swift in Sources */,
 				666F02252B5D4BE800B57B18 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

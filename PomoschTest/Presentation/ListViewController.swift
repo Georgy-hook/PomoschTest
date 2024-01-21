@@ -7,13 +7,42 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
-
+final class ListViewController: UIViewController {
+    // MARK: - UI Elements
+    let listTableView = ListTableView()
+    
+    // MARK: - Variables
+    var mockPatients = ["Иван Иванов", "Петр Дьяченко", "Лариса Харитонова"]
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        configureUI()
+        addSubviews()
+        applyConstraints()
+        listTableView.set(with: mockPatients)
     }
+}
 
-
+// MARK: - Layout
+extension ListViewController {
+    private func configureUI() {
+        view.backgroundColor = .white
+        title = "Пациенты"
+        
+    }
+    
+    private func addSubviews() {
+        view.addSubview(listTableView)
+    }
+    
+    private func applyConstraints() {
+        NSLayoutConstraint.activate([
+            listTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            listTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            listTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            listTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
 }
 
