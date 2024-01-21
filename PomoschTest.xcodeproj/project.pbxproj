@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		666F02232B5D4BE800B57B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F02222B5D4BE800B57B18 /* AppDelegate.swift */; };
 		666F02252B5D4BE800B57B18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F02242B5D4BE800B57B18 /* SceneDelegate.swift */; };
-		666F02272B5D4BE800B57B18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F02262B5D4BE800B57B18 /* ViewController.swift */; };
-		666F022A2B5D4BE800B57B18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666F02282B5D4BE800B57B18 /* Main.storyboard */; };
+		666F02272B5D4BE800B57B18 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666F02262B5D4BE800B57B18 /* ListViewController.swift */; };
 		666F022C2B5D4BEA00B57B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666F022B2B5D4BEA00B57B18 /* Assets.xcassets */; };
 		666F022F2B5D4BEA00B57B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666F022D2B5D4BEA00B57B18 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		666F021F2B5D4BE800B57B18 /* PomoschTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoschTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666F02222B5D4BE800B57B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		666F02242B5D4BE800B57B18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		666F02262B5D4BE800B57B18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		666F02292B5D4BE800B57B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		666F02262B5D4BE800B57B18 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		666F022B2B5D4BEA00B57B18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		666F022E2B5D4BEA00B57B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		666F02302B5D4BEA00B57B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,54 @@
 		666F02212B5D4BE800B57B18 /* PomoschTest */ = {
 			isa = PBXGroup;
 			children = (
+				666F023A2B5D4DFB00B57B18 /* Models */,
+				666F02392B5D4DE900B57B18 /* Resources */,
+				666F02382B5D4DDC00B57B18 /* Presentation */,
+				666F02372B5D4DC900B57B18 /* Helpers */,
+				666F02362B5D4DB600B57B18 /* LifeCycle */,
+			);
+			path = PomoschTest;
+			sourceTree = "<group>";
+		};
+		666F02362B5D4DB600B57B18 /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
 				666F02222B5D4BE800B57B18 /* AppDelegate.swift */,
 				666F02242B5D4BE800B57B18 /* SceneDelegate.swift */,
-				666F02262B5D4BE800B57B18 /* ViewController.swift */,
-				666F02282B5D4BE800B57B18 /* Main.storyboard */,
+			);
+			path = LifeCycle;
+			sourceTree = "<group>";
+		};
+		666F02372B5D4DC900B57B18 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		666F02382B5D4DDC00B57B18 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				666F02262B5D4BE800B57B18 /* ListViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		666F02392B5D4DE900B57B18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				666F022B2B5D4BEA00B57B18 /* Assets.xcassets */,
 				666F022D2B5D4BEA00B57B18 /* LaunchScreen.storyboard */,
 				666F02302B5D4BEA00B57B18 /* Info.plist */,
 			);
-			path = PomoschTest;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		666F023A2B5D4DFB00B57B18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +164,6 @@
 			files = (
 				666F022F2B5D4BEA00B57B18 /* LaunchScreen.storyboard in Resources */,
 				666F022C2B5D4BEA00B57B18 /* Assets.xcassets in Resources */,
-				666F022A2B5D4BE800B57B18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				666F02272B5D4BE800B57B18 /* ViewController.swift in Sources */,
+				666F02272B5D4BE800B57B18 /* ListViewController.swift in Sources */,
 				666F02232B5D4BE800B57B18 /* AppDelegate.swift in Sources */,
 				666F02252B5D4BE800B57B18 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		666F02282B5D4BE800B57B18 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				666F02292B5D4BE800B57B18 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		666F022D2B5D4BEA00B57B18 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +322,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C3BZB3Q66B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PomoschTest/Info.plist;
+				INFOPLIST_FILE = PomoschTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,10 +349,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C3BZB3Q66B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PomoschTest/Info.plist;
+				INFOPLIST_FILE = PomoschTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
