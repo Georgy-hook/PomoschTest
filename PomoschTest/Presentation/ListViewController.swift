@@ -13,7 +13,7 @@ final class ListViewController: UIViewController {
     
     // MARK: - Variables
     var mockPatients = ["Иван Иванов", "Петр Дьяченко", "Лариса Харитонова"]
-    
+    var service = DataCoordinator()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,8 @@ final class ListViewController: UIViewController {
         addSubviews()
         applyConstraints()
         listTableView.set(with: mockPatients)
+        service.initialize()
+        service.makeWardsGraphQLCall(first: 10, after: nil)
     }
 }
 
