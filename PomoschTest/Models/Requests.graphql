@@ -9,6 +9,14 @@ cursor
 node {
 id
 publicInformation {
+  city
+  dateOfBirth
+  dateOfDeath
+  gender
+  photo{
+    url(asAttachment:false)
+}
+  story
 name {
 fullName
 }

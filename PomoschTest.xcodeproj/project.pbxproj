@@ -20,6 +20,11 @@
 		668C34952B5FBF80002757FE /* GraphQlCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668C34942B5FBF80002757FE /* GraphQlCoordinator.swift */; };
 		668C34982B5FC082002757FE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 668C34972B5FC082002757FE /* Apollo */; };
 		669424BF2B618DF90019FCA1 /* PomochAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 669424BE2B618DF90019FCA1 /* PomochAPI */; };
+		66F739982B628E6000FADC20 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F739972B628E6000FADC20 /* PersonModel.swift */; };
+		66F7399B2B62910700FADC20 /* PomochAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F7399A2B62910700FADC20 /* PomochAPI */; };
+		66F7399D2B62998500FADC20 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7399C2B62998500FADC20 /* DateFormatter.swift */; };
+		66F7399F2B62B5CB00FADC20 /* GraphQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7399E2B62B5CB00FADC20 /* GraphQLHelper.swift */; };
+		66F739A22B62B88200FADC20 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 66F739A12B62B88200FADC20 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,9 @@
 		668C34942B5FBF80002757FE /* GraphQlCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQlCoordinator.swift; sourceTree = "<group>"; };
 		668C349F2B5FC91D002757FE /* Requests.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Requests.graphql; sourceTree = "<group>"; };
 		668C34A42B5FD3CF002757FE /* apollo-codegen-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apollo-codegen-config.json"; sourceTree = SOURCE_ROOT; };
+		66F739972B628E6000FADC20 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		66F7399C2B62998500FADC20 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		66F7399E2B62B5CB00FADC20 /* GraphQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F739A22B62B88200FADC20 /* Kingfisher in Frameworks */,
+				66F7399B2B62910700FADC20 /* PomochAPI in Frameworks */,
 				668C34982B5FC082002757FE /* Apollo in Frameworks */,
 				669424BF2B618DF90019FCA1 /* PomochAPI in Frameworks */,
 			);
@@ -95,6 +105,8 @@
 		666F02372B5D4DC900B57B18 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				66F7399C2B62998500FADC20 /* DateFormatter.swift */,
+				66F7399E2B62B5CB00FADC20 /* GraphQLHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -125,6 +137,7 @@
 			children = (
 				668C349F2B5FC91D002757FE /* Requests.graphql */,
 				667AAEE42B616FD1005C2953 /* schema.graphqls */,
+				66F739972B628E6000FADC20 /* PersonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +170,8 @@
 			packageProductDependencies = (
 				668C34972B5FC082002757FE /* Apollo */,
 				669424BE2B618DF90019FCA1 /* PomochAPI */,
+				66F7399A2B62910700FADC20 /* PomochAPI */,
+				66F739A12B62B88200FADC20 /* Kingfisher */,
 			);
 			productName = PomoschTest;
 			productReference = 666F021F2B5D4BE800B57B18 /* PomoschTest.app */;
@@ -188,7 +203,8 @@
 			mainGroup = 666F02162B5D4BE800B57B18;
 			packageReferences = (
 				668C34962B5FC082002757FE /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				669424BD2B618DF90019FCA1 /* XCLocalSwiftPackageReference "pomochAPI" */,
+				66F739992B62910700FADC20 /* XCLocalSwiftPackageReference "pomochAPI" */,
+				66F739A02B62B88200FADC20 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 666F02202B5D4BE800B57B18 /* Products */;
 			projectDirPath = "";
@@ -221,8 +237,11 @@
 				668C34952B5FBF80002757FE /* GraphQlCoordinator.swift in Sources */,
 				666F023C2B5D508C00B57B18 /* ListTableView.swift in Sources */,
 				667AAEE02B616AA6005C2953 /* GraphQlCoordinator + API.swift in Sources */,
+				66F7399D2B62998500FADC20 /* DateFormatter.swift in Sources */,
+				66F7399F2B62B5CB00FADC20 /* GraphQLHelper.swift in Sources */,
 				666F02232B5D4BE800B57B18 /* AppDelegate.swift in Sources */,
 				666F023E2B5D52E700B57B18 /* ListCell.swift in Sources */,
+				66F739982B628E6000FADC20 /* PersonModel.swift in Sources */,
 				666F02252B5D4BE800B57B18 /* SceneDelegate.swift in Sources */,
 				667AAEE22B616B6F005C2953 /* constants.swift in Sources */,
 			);
@@ -439,7 +458,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		669424BD2B618DF90019FCA1 /* XCLocalSwiftPackageReference "pomochAPI" */ = {
+		66F739992B62910700FADC20 /* XCLocalSwiftPackageReference "pomochAPI" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = pomochAPI;
 		};
@@ -454,6 +473,14 @@
 				minimumVersion = 1.8.0;
 			};
 		};
+		66F739A02B62B88200FADC20 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -465,6 +492,15 @@
 		669424BE2B618DF90019FCA1 /* PomochAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PomochAPI;
+		};
+		66F7399A2B62910700FADC20 /* PomochAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PomochAPI;
+		};
+		66F739A12B62B88200FADC20 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66F739A02B62B88200FADC20 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

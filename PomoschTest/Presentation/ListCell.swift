@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ListCell: UITableViewCell{
     static let reuseId = "ListCell"
@@ -15,15 +16,15 @@ final class ListCell: UITableViewCell{
         self.backgroundColor = .clear
         self.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         self.textLabel?.textColor = .black
+        self.imageView?.contentMode = .scaleAspectFit
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(with patient:String){
-        self.textLabel?.text = patient
-        self.imageView?.image = UIImage(named: "testImage")
-        self.textLabel?.text = patient
+    func set(with patient:Person){
+        self.textLabel?.text = patient.fullName
+        self.imageView?.kf.setImage(with: patient.photoURL)
     }
 }

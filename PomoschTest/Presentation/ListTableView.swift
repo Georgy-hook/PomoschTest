@@ -9,7 +9,8 @@ import UIKit
 
 final class ListTableView: UITableView{
     // MARK: - Variables
-    private var patients:[String] = []
+    private var patients:[Person] = []
+    weak var delegateVC: ListViewControllerProtocol?
     
     // MARK: - Initiliazation
     init() {
@@ -50,11 +51,26 @@ extension ListTableView:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        delegateVC?.fetchNextPage()
+    }
 }
 
 extension ListTableView {
-    func set(with patients: [String]) {
+    func set(with patients: [Person]) {
+        
+        let oldCount = self.patients.count
         self.patients = patients
-        self.reloadData()
+        let newCount = self.patients.count
+        
+        if oldCount != newCount {
+            let indexPaths = (oldCount..<newCount).map { i in
+                IndexPath(row: i, section: 0)
+            }
+            self.performBatchUpdates {
+                self.insertRows(at: indexPaths, with: .automatic)
+            } completion: { _ in }
+        }
     }
 }

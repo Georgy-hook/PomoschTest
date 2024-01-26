@@ -7,43 +7,64 @@
 
 import Apollo
 import PomochAPI
+import Foundation
 
 extension DataCoordinator {
-    func makeIdsGraphQLCall() {
-        print(" Making API Call... ")
-        guard let apolloClient = self.apolloClient else {
-            print(" Could not make call as Apollo Client does not exist.")
-            return
-        }
+    func makeWardsGraphQLCall() {
         
-        apolloClient.fetch(query: WardsIdsQuery()){ result in
-            switch result {
-            case .success(let response):
-                // Please note that we only print the first one to avoid overloading the interface.
-                //print(" makePokemonGraphQLCall Retrieved GraphQL Pokemon Data : \(response.data?.wardsIds).")
-                print("success")
-                
-            case .failure(let error):
-                print("Failed to retrieve GraphQL Pokemon Data with error : \(error).")
-            }
-        }
-    }
-    
-    func makeWardsGraphQLCall(first:GraphQLNullable<Int>, after: GraphQLNullable<String>) {
-        print("Making API Call for Wards...")
+        guard !isFetchingPersons else { return }
+        isFetchingPersons = true
+        
         guard let apolloClient = self.apolloClient else {
             print("Could not make the call as Apollo Client does not exist.")
             return
         }
         
-        apolloClient.fetch(query: GetWardsQuery(first: first, after: after)) { result in
+        let currentPage:GraphQLNullable<String> = GraphQLHelper.graphQLNullableFrom(currentCursor)
+        
+        apolloClient.fetch(query: GetWardsQuery(first: 10, after: currentPage)) { result in
             switch result {
             case .success(let response):
-                // Please note that we only print the first one to avoid overloading the interface.
-                print("Retrieved GraphQL Wards Data: \(response.data?.wards?.edges?.first?.node.publicInformation.name.fullName).")
+                
+                response.data?.wards?.edges?.forEach{ element in
+                    let person = self.convertToPerson(element: element)
+                    self.persons.append(person)
+                }
+                
+                NotificationCenter.default
+                    .post(
+                        name: DataCoordinator.didChangeNotification,
+                        object: self,
+                        userInfo: ["personsList": self.persons])
+                
+                self.currentCursor = response.data?.wards?.edges?.last?.cursor
+                
+                self.isFetchingPersons = false
+                
             case .failure(let error):
                 print("Failed to retrieve GraphQL Wards Data with error: \(error).")
+                
+                self.isFetchingPersons = false
             }
         }
+    }
+}
+
+extension DataCoordinator{
+    func convertToPerson(element: GetWardsQuery.Data.Wards.Edge) -> Person{
+        let url = URL(string: element.node.publicInformation.photo.url)
+        
+        let age = calculateAge(with: element.node.publicInformation.dateOfBirth,
+                               and: element.node.publicInformation.dateOfDeath)
+        
+        let gender =  self.convertToGender(with: element.node.publicInformation.gender.rawValue)
+        
+        return Person(fullName: element.node.publicInformation.name.fullName,
+                      age: age,
+                      story: element.node.publicInformation.story,
+                      gender: gender,
+                      city: element.node.publicInformation.city,
+                      photoURL: url)
+        
     }
 }

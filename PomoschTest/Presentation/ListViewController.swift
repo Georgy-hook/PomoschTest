@@ -7,22 +7,26 @@
 
 import UIKit
 
+protocol ListViewControllerProtocol: AnyObject {
+    func fetchNextPage()
+}
+
 final class ListViewController: UIViewController {
     // MARK: - UI Elements
     let listTableView = ListTableView()
     
     // MARK: - Variables
-    var mockPatients = ["Иван Иванов", "Петр Дьяченко", "Лариса Харитонова"]
     var service = DataCoordinator()
+    private var dataCoordinatorObserver: NSObjectProtocol?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         addSubviews()
         applyConstraints()
-        listTableView.set(with: mockPatients)
         service.initialize()
-        service.makeWardsGraphQLCall(first: 10, after: nil)
+        addObserver()
     }
 }
 
@@ -32,6 +36,7 @@ extension ListViewController {
         view.backgroundColor = .white
         title = "Пациенты"
         
+        listTableView.delegateVC = self
     }
     
     private func addSubviews() {
@@ -48,3 +53,23 @@ extension ListViewController {
     }
 }
 
+//MARK: - Notification center
+extension ListViewController{
+    private func addObserver(){
+        dataCoordinatorObserver = NotificationCenter.default
+            .addObserver(
+                forName: DataCoordinator.didChangeNotification,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                listTableView.set(with: service.persons)
+            }
+    }
+}
+
+extension ListViewController:ListViewControllerProtocol{
+    func fetchNextPage() {
+        service.makeWardsGraphQLCall()
+    }
+}
