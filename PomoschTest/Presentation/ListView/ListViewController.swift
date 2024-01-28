@@ -9,6 +9,7 @@ import UIKit
 
 protocol ListViewControllerProtocol: AnyObject {
     func fetchNextPage()
+    func showDetailView(with person:Person)
 }
 
 final class ListViewController: UIViewController {
@@ -68,8 +69,19 @@ extension ListViewController{
     }
 }
 
+//MARK: - ListViewControllerProtocol
 extension ListViewController:ListViewControllerProtocol{
     func fetchNextPage() {
         service.makeWardsGraphQLCall()
+    }
+    
+    func showDetailView(with person:Person) {
+        let detailViewController = DetailViewController()
+        
+        detailViewController.setupDetailView(with: person)
+        
+        detailViewController.modalPresentationStyle = .fullScreen
+        
+        show(detailViewController, sender: self)
     }
 }

@@ -16,7 +16,7 @@ struct Person{
     var photoURL: URL?
 }
 
-enum Gender{
-    case Male
-    case Female
+enum Gender: String{
+    case Male = "Мужской"
+    case Female = "Женский"
 }
