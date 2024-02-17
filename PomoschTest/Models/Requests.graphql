@@ -1,0 +1,45 @@
+query WardsIds{
+wardsIds
+}
+
+query GetWards($first: Int, $after: String) {
+wards(first: $first, after: $after) {
+edges {
+cursor
+node {
+id
+publicInformation {
+  city
+  dateOfBirth
+  dateOfDeath
+  gender
+  photo{
+    url(asAttachment:false)
+}
+  story
+name {
+fullName
+}
+}
+}
+}
+pageInfo {
+endCursor
+hasNextPage
+}
+}
+}
+
+
+
+query WardsByIdsQuery($ids: [ID!]!) {
+wardsByIds(ids: $ids) {
+id
+publicInformation {
+name {
+fullName
+}
+}
+}
+}
+
