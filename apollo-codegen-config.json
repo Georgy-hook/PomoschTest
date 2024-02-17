@@ -1,0 +1,43 @@
+{
+  "schemaNamespace" : "pomochAPI",
+  "input" : {
+    "operationSearchPaths" : [
+      "**/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "**/*.graphqls"
+    ]
+  },
+  "schemaDownloadConfiguration": {
+      "downloadMethod": {
+      "introspection": {
+      "endpointURL": "https://api.pomosch.app/graphql",
+      "httpMethod": {
+      "POST": {}
+                  },
+      "includeDeprecatedInputValues": false,
+      "outputFormat": "SDL"
+              }
+          },
+      "downloadTimeout": 60,
+      "headers": [],
+      "outputPath": "./PomoschTest/Models/schema.graphqls"
+      },
+  "output" : {
+    "testMocks" : {
+      "none" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./pomochAPI",
+      "moduleType" : {
+        "swiftPackageManager" : {
+        }
+      }
+    },
+    "operations" : {
+      "inSchemaModule" : {
+      }
+    }
+  }
+}
